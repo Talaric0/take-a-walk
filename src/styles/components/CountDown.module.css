@@ -69,6 +69,10 @@
   border-bottom: 4px solid #4cd62b;
 }
 
+.countdownButton:disabled img {
+  margin-left: 0.4rem;
+}
+
 .countdownButtonActive {
   background: var(--white);
   color: var(--title);
