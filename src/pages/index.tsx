@@ -27,7 +27,7 @@ export default function Home(props: HomeProps) {
     >
       <div className={styles.container}>
         <Head>
-          <title>Início | Take a Walk</title>
+          <title>| Take a Walk |</title>
         </Head>
 
         <ExperienceBar />

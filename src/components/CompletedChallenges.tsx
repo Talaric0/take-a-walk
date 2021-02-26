@@ -7,7 +7,7 @@ export default function CompletedChallenges() {
 
   return (
     <div className={styles.completedChallengesContainer}>
-      <span>Desafios completos</span>
+      <span>Challenges completed</span>
       <span>{challengesCompleted}</span>
     </div>
   );
