@@ -15,6 +15,12 @@
   align-content: center;
 }
 
+@media (max-width: 728px) {
+  .container section {
+    display: block;
+  }
+}
+
 .background {
   display: flex;
   background-color: var(--blue-dark);
