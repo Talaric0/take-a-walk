@@ -15,7 +15,7 @@
 <br />
 <p align="center">
   <a href="https://take-a-walk-talaric0.vercel.app/">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://raw.githubusercontent.com/Talaric0/take-a-walk/master/public/images/simbol.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Take a Walk</h3>
@@ -100,10 +100,6 @@ If you want to run this app locally, do as follows.
 <!-- USAGE EXAMPLES -->
 
 ## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 <!-- ROADMAP -->
 
