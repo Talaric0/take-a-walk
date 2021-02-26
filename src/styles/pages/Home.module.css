@@ -1,5 +1,5 @@
 .container {
-  height: 100vh;
+  max-height: 100vh;
   max-width: 992px;
   margin: 0 auto;
   padding: 2.5rem 2rem;
@@ -13,4 +13,46 @@
   grid-template-columns: 1fr 1fr;
   gap: 6.25rem;
   align-content: center;
+}
+
+.background {
+  display: flex;
+  background-color: var(--blue-dark);
+  height: 100vh;
+  width: 100%;
+  justify-content: end;
+}
+
+.leftScene {
+  width: 60%;
+}
+
+.leftScene img {
+  position: relative;
+  top: 20%;
+}
+
+.rightScene {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  width: 40%;
+  color: var(--white);
+  z-index: 5;
+}
+
+.title {
+  display: flex;
+  margin: 1rem 0;
+}
+
+.login p {
+  margin: 0.75rem 0;
+  color: var(--text-highlight);
+}
+
+.rightScene img {
+  margin: 0;
+  padding: 0;
 }

@@ -11,6 +11,8 @@ import ChallengeBox from "../components/ChallengeBox";
 import styles from "../styles/pages/Home.module.css";
 import { CountdownProvider } from "../contexts/CountdownContext";
 import { ChallengesProvider } from "../contexts/ChallengeContext";
+//nextauth
+import { signIn, signOut, useSession } from "next-auth/client";
 
 interface HomeProps {
   level: number;
@@ -19,33 +21,68 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
+  const [session, loading] = useSession();
+
   return (
-    <ChallengesProvider
-      level={props.level}
-      currentExperience={props.currentExperience}
-      challengesCompleted={props.challengesCompleted}
-    >
-      <div className={styles.container}>
-        <Head>
-          <title>| Take a Walk |</title>
-        </Head>
-
-        <ExperienceBar />
-        <CountdownProvider>
-          <section>
-            <div className={styles.leftContainer}>
-              <Profile />
-              <CompletedChallenges />
-              <CountDown />
+    <>
+      {!session && (
+        <>
+          <div className={styles.background}>
+            <div className={styles.leftScene}>
+              <img src="images/simbol.png" alt="" />
             </div>
-
-            <div>
-              <ChallengeBox />
+            <div className={styles.rightScene}>
+              <div className={styles.title}>
+                <h1>Take a Walk</h1>
+              </div>
+              <h3>Welcome</h3>
+              <div className={styles.login}>
+                <p>Login with Google to continue</p>
+              </div>
+              <a
+                href={`/api/auth/signin`}
+                onClick={() => {
+                  signIn();
+                }}
+              >
+                <img
+                  src="images/btn_google_signin_dark_normal_web@2x.png"
+                  alt="google login button"
+                />
+              </a>
             </div>
-          </section>
-        </CountdownProvider>
-      </div>
-    </ChallengesProvider>
+          </div>
+        </>
+      )}
+      {session && (
+        <ChallengesProvider
+          level={props.level}
+          currentExperience={props.currentExperience}
+          challengesCompleted={props.challengesCompleted}
+        >
+          <div className={styles.container}>
+            <Head>
+              <title>| Take a Walk |</title>
+            </Head>
+
+            <ExperienceBar />
+            <CountdownProvider>
+              <section>
+                <div className={styles.leftContainer}>
+                  <Profile session={session} />
+                  <CompletedChallenges />
+                  <CountDown />
+                </div>
+
+                <div>
+                  <ChallengeBox />
+                </div>
+              </section>
+            </CountdownProvider>
+          </div>
+        </ChallengesProvider>
+      )}
+    </>
   );
 }
 
