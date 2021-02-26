@@ -26,6 +26,7 @@ interface ChallengesContextData {
   resetChallenge: () => void;
   activeChallenge: Challenge;
   completeChallenge: () => void;
+  closeLevelUpModal: () => void;
 }
 
 export const ChallengesContext = createContext({} as ChallengesContextData);
