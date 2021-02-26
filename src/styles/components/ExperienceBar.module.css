@@ -1,6 +1,7 @@
 /* XPbar */
 .experienceBar {
   display: flex;
+  margin-bottom: 4rem;
   align-items: center;
 }
 
