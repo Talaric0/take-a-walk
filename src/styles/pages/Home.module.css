@@ -54,4 +54,6 @@
 .rightScene img {
   margin: 0;
   padding: 0;
+  width: 300px;
+  cursor: pointer;
 }

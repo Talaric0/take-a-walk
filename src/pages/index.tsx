@@ -39,17 +39,14 @@ export default function Home(props: HomeProps) {
               <div className={styles.login}>
                 <p>Login with Google to continue</p>
               </div>
-              <a
-                href={`/api/auth/signin`}
-                onClick={() => {
+              <img
+                src="images/btn_google_signin_dark_normal_web@2x.png"
+                alt="google login button"
+                onClick={(e) => {
+                  e.preventDefault();
                   signIn();
                 }}
-              >
-                <img
-                  src="images/btn_google_signin_dark_normal_web@2x.png"
-                  alt="google login button"
-                />
-              </a>
+              />
             </div>
           </div>
         </>
