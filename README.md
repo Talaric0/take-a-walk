@@ -64,7 +64,7 @@
 
 [![Take a Walk Screen Shot][product-screenshot]](https://github.com/Talaric0/take-a-walk/blob/master/public/images/screenshot.png)
 
-App developed during the Next Level Week by Rocketseat.
+App developed during the Next Level Week by [Rocketseat](http://rocketseat.com.br/).
 
 NextAuth.js for OAuth login via Google, info storage via cookies, contextAPI for state management.
 
