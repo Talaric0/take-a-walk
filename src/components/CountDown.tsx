@@ -2,7 +2,7 @@ import { CountdownContext } from "../contexts/CountdownContext";
 import { useContext } from "react";
 import styles from "../styles/components/CountDown.module.css";
 
-export default function CountDown() {
+export default function CountDown({ isDark }) {
   const {
     minutes,
     seconds,
@@ -17,7 +17,11 @@ export default function CountDown() {
 
   return (
     <div>
-      <div className={styles.countdownContainer}>
+      <div
+        className={
+          isDark ? styles.countdownContainerDark : styles.countdownContainer
+        }
+      >
         <div>
           <span>{minuteLeft}</span>
           <span>{minuteRight}</span>

@@ -63,3 +63,9 @@
   width: 300px;
   cursor: pointer;
 }
+
+/* dark mode */
+.dark {
+  background: #2d3244;
+  color: #8b8b8b;
+}

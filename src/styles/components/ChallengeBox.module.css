@@ -13,9 +13,30 @@
   text-align: center;
 }
 
+.challengeBoxContainerDark {
+  height: 100%;
+  background: #2d3244;
+  color: #8b8b8b;
+
+  border-radius: 5px;
+  padding: 1.5rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
 @media (max-width: 728px) {
   .challengeBoxContainer {
     margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .challengeBoxContainerDark {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -82,6 +103,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  margin-top: 2rem;
 }
 
 .challengeActive footer button {

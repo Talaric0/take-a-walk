@@ -13,6 +13,7 @@ import { CountdownProvider } from "../contexts/CountdownContext";
 import { ChallengesProvider } from "../contexts/ChallengeContext";
 //nextauth
 import { signIn, signOut, useSession } from "next-auth/client";
+import { useEffect, useState } from "react";
 
 interface HomeProps {
   level: number;
@@ -22,6 +23,19 @@ interface HomeProps {
 
 export default function Home(props: HomeProps) {
   const [session, loading] = useSession();
+  const [isDark, setIsDark] = useState(false);
+
+  function toggleDarkMode() {
+    isDark ? setIsDark(false) : setIsDark(true);
+  }
+
+  useEffect(() => {
+    if (isDark) {
+      document.querySelector("body").style.background = "#0a0f18";
+    } else {
+      document.querySelector("body").style.background = "var(--background)";
+    }
+  }, [isDark]);
 
   return (
     <>
@@ -66,13 +80,17 @@ export default function Home(props: HomeProps) {
             <CountdownProvider>
               <section>
                 <div className={styles.leftContainer}>
-                  <Profile session={session} />
+                  <Profile
+                    session={session}
+                    setIsDark={setIsDark}
+                    isDark={isDark}
+                  />
                   <CompletedChallenges />
-                  <CountDown />
+                  <CountDown isDark={isDark} />
                 </div>
 
                 <div>
-                  <ChallengeBox />
+                  <ChallengeBox isDark={isDark} />
                 </div>
               </section>
             </CountdownProvider>
