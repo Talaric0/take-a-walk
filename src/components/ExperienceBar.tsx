@@ -1,8 +1,11 @@
 import React, { useContext } from "react";
 import { ChallengesContext } from "../contexts/ChallengeContext";
 import styles from "../styles/components/ExperienceBar.module.css";
+//fontAwesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
-export default function ExperienceBar() {
+export default function ExperienceBar({ signOut }) {
   const { currentExperience, experienceToNextLevel } = useContext(
     ChallengesContext
   );
@@ -25,6 +28,15 @@ export default function ExperienceBar() {
         </span>
       </div>
       <span>{experienceToNextLevel}xp</span>
+
+      <FontAwesomeIcon
+        icon={faSignOutAlt}
+        className={styles.icon}
+        onClick={(e) => {
+          e.preventDefault();
+          signOut();
+        }}
+      />
     </header>
   );
 }

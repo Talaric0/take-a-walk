@@ -12,7 +12,7 @@ import styles from "../styles/pages/Home.module.css";
 import { CountdownProvider } from "../contexts/CountdownContext";
 import { ChallengesProvider } from "../contexts/ChallengeContext";
 //nextauth
-import { signIn, signout, signOut, useSession } from "next-auth/client";
+import { signIn, signOut, useSession } from "next-auth/client";
 import { useEffect, useState } from "react";
 //fontawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -93,16 +93,8 @@ export default function Home(props: HomeProps) {
               <title>| Take a Walk |</title>
             </Head>
 
-            <ExperienceBar />
-            <button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                signOut();
-              }}
-            >
-              signout
-            </button>
+            <ExperienceBar signOut={signOut} />
+
             <CountdownProvider>
               <section>
                 <div className={styles.leftContainer}>
