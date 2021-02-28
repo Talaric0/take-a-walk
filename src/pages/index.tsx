@@ -12,8 +12,11 @@ import styles from "../styles/pages/Home.module.css";
 import { CountdownProvider } from "../contexts/CountdownContext";
 import { ChallengesProvider } from "../contexts/ChallengeContext";
 //nextauth
-import { signIn, signOut, useSession } from "next-auth/client";
+import { signIn, signout, signOut, useSession } from "next-auth/client";
 import { useEffect, useState } from "react";
+//fontawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
 
 interface HomeProps {
   level: number;
@@ -51,16 +54,30 @@ export default function Home(props: HomeProps) {
               </div>
               <h3>Welcome</h3>
               <div className={styles.login}>
-                <p>Login with Google to continue</p>
+                <p>Login to continue</p>
               </div>
-              <img
-                src="images/btn_google_signin_dark_normal_web@2x.png"
-                alt="google login button"
-                onClick={(e) => {
-                  e.preventDefault();
-                  signIn();
-                }}
-              />
+              <div>
+                <a>
+                  <FontAwesomeIcon
+                    icon={faGithub}
+                    className={styles.icon}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      signIn("github");
+                    }}
+                  />
+                </a>
+                <a>
+                  <FontAwesomeIcon
+                    icon={faGoogle}
+                    className={styles.icon}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      signIn("google");
+                    }}
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </>
@@ -77,6 +94,15 @@ export default function Home(props: HomeProps) {
             </Head>
 
             <ExperienceBar />
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                signOut();
+              }}
+            >
+              signout
+            </button>
             <CountdownProvider>
               <section>
                 <div className={styles.leftContainer}>
