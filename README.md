@@ -14,7 +14,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://take-a-walk-talaric0.vercel.app/">
+  <a href="https://take-a-walk.vercel.app/">
     <img src="https://raw.githubusercontent.com/Talaric0/take-a-walk/master/public/images/simbol.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -24,7 +24,7 @@
     An app for those who dive too deep into work and sometimes forgets about health!
     <br />
     <br />
-    <a href="https://take-a-walk-talaric0.vercel.app/">View Live</a>
+    <a href="https://take-a-walk.vercel.app/">View Live</a>
     ·
     <a href="https://github.com/Talaric0/take-a-walk/issues">Report Bug</a>
     ·
