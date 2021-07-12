@@ -70,8 +70,6 @@ NextAuth.js for OAuth login via Google, info storage via cookies, contextAPI for
 
 ### Built With
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 - [React](https://reactjs.org/)
 - [NextJS](https://nextjs.org/)
 
