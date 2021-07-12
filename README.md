@@ -21,7 +21,7 @@
   <h3 align="center">Take a Walk</h3>
 
   <p align="center">
-    An app for those who dive too deep into work and sometimes forgets about health!
+    An app based on the pomodoro technique gamified with some healthy tasks. When completing a challenge You'll gain experience and up your levels, unlocking neat features like a dark mode once you reach level 3.
     <br />
     <br />
     <a href="https://take-a-walk.vercel.app/">View Live</a>
